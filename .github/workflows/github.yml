@@ -25,3 +25,5 @@ jobs:
         run:
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p  ${{ secrets.DOCKERHUB_TOKEN }}
             docker push  ajjurathod1998/github      
+        env:
+            DOCKER_CLI_ACI: 1
