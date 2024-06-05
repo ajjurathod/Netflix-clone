@@ -18,16 +18,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      - name: install trivy scanner
+      - name: containerzation
         run: 
-            sudo apt-get install wget apt-transport-https gnupg lsb-release
-            wget -qO- https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-            echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
-            sudo apt-get update
-            sudo apt-get install trivy
-
-      - name: scan
-        run: trivy fs .
-
+             docker build --build-arg TMDB_V3_API_KEY=bf85b7fa14486efa12b36aee05a5e34b ajjurathod1998/github .
      
       
