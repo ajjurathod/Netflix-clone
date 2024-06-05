@@ -21,5 +21,7 @@ jobs:
       - name: containerzation
         run: 
              docker build --build-arg TMDB_V3_API_KEY=bf85b7fa14486efa12b36aee05a5e34b -t  ajjurathod1998/github .
-     
-      
+      - name: pushing to github
+        run:
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p  ${{ secrets.DOCKERHUB_TOKEN }}
+            docker push  ajjurathod1998/github      
