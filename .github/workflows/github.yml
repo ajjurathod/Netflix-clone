@@ -1,11 +1,11 @@
 ---
-name: Build,analyze,scan
+name: Build,analyse,scan
 on:
   push:
     branches:
       - main
 jobs:
-  "build,analyze,scan":
+  build-analyse-scan:
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
