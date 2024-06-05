@@ -20,6 +20,6 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       - name: containerzation
         run: 
-             docker build --build-arg TMDB_V3_API_KEY=bf85b7fa14486efa12b36aee05a5e34b ajjurathod1998/github .
+             docker build --build-arg TMDB_V3_API_KEY=bf85b7fa14486efa12b36aee05a5e34b -t  ajjurathod1998/github .
      
       
