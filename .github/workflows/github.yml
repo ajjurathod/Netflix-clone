@@ -25,9 +25,7 @@ jobs:
         run: docker build --build-arg TMDB_V3_API_KEY=bf85b7fa14486efa12b36aee05a5e34b -t ajjurathod1998/github1 .
 
       - name: docker login
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: docker login -u ajjurathod1998 -p ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: pushing to dockerhub
         run : docker push ajjurathod1998/github1
