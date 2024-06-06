@@ -29,3 +29,15 @@ jobs:
 
       - name: pushing to dockerhub
         run : docker push ajjurathod1998/github1
+        env:
+            DOCKER_CLI_ACI: 1
+  deploy:
+    needs: build
+    runs-on: [netflix]
+    steps:
+     - name: pull the image
+       run: docker pull ajjurathod1998/github1
+     - name: run the contaier
+       run: docker run -d --name netflix -p 8081:80 ajjurathod1998/github1
+      
+       
